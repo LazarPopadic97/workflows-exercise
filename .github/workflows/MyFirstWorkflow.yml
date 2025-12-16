@@ -18,7 +18,7 @@ jobs:
         run: |
           echo "The repository ${{ github.repository }} contains the following files: "
           tree
-      - name: Set color
+      - name: Set color as output variable
         id: color-generator
         run: echo "SELECTED_COLOR=green" >> "$GITHUB_OUTPUT"
       - name: Get color
@@ -32,9 +32,12 @@ jobs:
       - name: Use that secret output (protected by a mask)
         run: |
           echo "the secret number is ${{ steps.sets-a-secret.outputs.secret-number }}"
-      - name: Set the value
+      - name: Set the env value
         id: step_one
         run: |
           echo "action_state=yellow" >> "$GITHUB_ENV"
           echo "${{ env.action_state }}" # This will output 'yellow'
+      - name: Set the summary value
+        run: echo "Trying out job summary" >> $GITHUB_STEP_SUMMARY
+        
       
