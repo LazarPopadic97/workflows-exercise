@@ -47,6 +47,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: call composite action
-        uses: ././action
+        uses: ./action
         
       
