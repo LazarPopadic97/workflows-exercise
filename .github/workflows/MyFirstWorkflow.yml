@@ -42,6 +42,7 @@ jobs:
           echo '### Hello world! :rocket:' >> $GITHUB_STEP_SUMMARY
           echo '### Love this feature!! :medal_sports:' >> $GITHUB_STEP_SUMMARY
           echo '<h1>Great feature!</h1>' >> $GITHUB_STEP_SUMMARY
+          exit 1
 
   UsingCompositeAction:
     runs-on: ubuntu-latest
